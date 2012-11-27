@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 
 /**
- * @author Put your name here
+ * @author Chao Ma
  */
 public class SelfPortrait extends JFrame {      
     /**
