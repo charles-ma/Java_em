@@ -4,10 +4,26 @@ public class JPractice {
 
     private int f = 0;
     private int g = 5;
+    private final int a;
+    private int b;
+    private static int c;
+    
+    static
+    {//will be excecuted before the main function
+	c = 3;
+	System.out.println("Hello World!");
+	System.exit(0);
+    }
+
+    {
+	this.a = 1;//initialization block, it's legal and will be executed before the constructors
+	this.b = 0;
+    }
 
     public static void main(String args[]){
+	System.exit(0);
 	JPractice practice = new JPractice();
-	practice.execute();
+    	practice.execute();
     }
 
     /**
@@ -22,6 +38,7 @@ public class JPractice {
      */
     public void execute(){
 	System.out.println(this.catExcep());
+	System.out.println(c);
     }
 
     /**
