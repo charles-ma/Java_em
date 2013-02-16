@@ -34,7 +34,7 @@ public class LinkedListGenerator {
 	Random ranGen = new Random();
 
 	for(int i = 0; i < len; i++) {
-	    int ranNum = ranGen.nextInt(100);
+	    int ranNum = ranGen.nextInt(10);
 	    Node<Integer> node = new Node<Integer>(ranNum, head);
 	    head = node;
 	}
