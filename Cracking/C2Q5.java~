@@ -1,0 +1,6 @@
+public class C2Q5 {
+    public static void main(String []args) {
+	Node<Integer> head = LinkedListGenerator.createIntLinkedList();
+	
+    }
+}
