@@ -12,7 +12,7 @@ public class JPractice {
     {//will be excecuted before the main function
 	c = 3;
 	System.out.println("Hello World!");
-	System.exit(0);
+	//	System.exit(0);
     }
 
     {
@@ -21,9 +21,12 @@ public class JPractice {
     }
 
     public static void main(String args[]){
+	SelfContain s = new SelfContain();
+	System.out.println(s.s.s.s.s.s.s == s.s);
 	System.exit(0);
 	JPractice practice = new JPractice();
     	practice.execute();
+
     }
 
     /**
@@ -97,4 +100,14 @@ class employee {
 	return this.i == other.i;
     }
 
+}
+
+/**
+ *This class includes self-contained constructor, can't be initialized normally
+ */
+class SelfContain {
+    static SelfContain s = new SelfContain();
+    public SelfContain() {
+
+    }
 }
