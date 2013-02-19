@@ -1,0 +1,31 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class EchoServer {
+    public static void main(String [] args) {
+	try {
+	    ServerSocket s = new ServerSocket(8189);
+	    Socket input = s.accept();
+	    try {
+		InputStream in = input.getInputStream();
+		OutputStream out = input.getOutputStream();
+		Scanner scanner = new Scanner(in);
+		PrintWriter writer = new PrintWriter(out, true);
+		writer.println("Hello! Enter BYE to exit.");
+		boolean shutdown = false;
+		while(!shutdown && scanner.hasNextLine()) {
+		    String line = scanner.nextLine();
+		    writer.println(line);
+		    if(line.trim().equals("BYE")) shutdown = true;
+		}
+	    }
+	    finally {
+		input.close();
+	    }
+	}
+	catch (IOException e) {
+	    e.printStackTrace();
+	}
+    }
+}
