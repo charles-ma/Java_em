@@ -1,0 +1,1 @@
+1. Write algo to create a minimal height binary tree from a sorted array.
