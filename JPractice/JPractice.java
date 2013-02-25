@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 
 public class JPractice {
 
@@ -42,6 +43,10 @@ public class JPractice {
     public void execute(){
 	System.out.println(this.catExcep());
 	System.out.println(c);
+    }
+
+    public <T> T[] toArray(T[] a) {
+	return a;
     }
 
     /**
