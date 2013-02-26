@@ -32,8 +32,8 @@ public class JPractice {
 	arrayIsObj(new int[20]);
 	int[] b = new int[20];
 	b.equals(a);
-
 	System.out.println(twoD);
+	ArrayList<?> noType = new ArrayList<String>();
     }
 
     public static void arrayIsObj(Object o) {
