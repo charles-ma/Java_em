@@ -8,7 +8,7 @@ public class JPractice {
     private final int a;
     private int b;
     private static int c;
-    
+    static int[][] twoD;    
     static
     {//will be excecuted before the main function
 	c = 3;
@@ -24,10 +24,20 @@ public class JPractice {
     public static void main(String args[]){
 	SelfContain s = new SelfContain();
 	System.out.println(s.s.s.s.s.s.s == s.s);
-	System.exit(0);
+	//	System.exit(0);
 	JPractice practice = new JPractice();
     	practice.execute();
+	ArrayList<List<String>> a = new ArrayList<List<String>>();
+	a.add(new ArrayList<String>());
+	arrayIsObj(new int[20]);
+	int[] b = new int[20];
+	b.equals(a);
 
+	System.out.println(twoD);
+    }
+
+    public static void arrayIsObj(Object o) {
+	
     }
 
     /**
