@@ -42,6 +42,9 @@ public class JPractice {
 	Object ob = new Object();
 	System.out.println(em == em1);
 	System.out.println(em == ob);
+
+	Manager man = new Manager();
+	man.print(ob);
     }
 
     public static void arrayIsObj(Object o) {
@@ -123,6 +126,11 @@ class employee {
 	return true;//this.i == other.i;
     }
 
+    public Object print(Object a) {
+	System.out.println("employee!");
+	return null;
+    }
+
 }
 
 /**
@@ -135,3 +143,9 @@ class SelfContain {
     }
 }
 
+class Manager extends employee {
+    public Manager print(Object a) {
+	System.out.println("manager!");
+	return null;
+    }
+}
