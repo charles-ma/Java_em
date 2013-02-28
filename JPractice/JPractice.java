@@ -36,6 +36,12 @@ public class JPractice {
 	ArrayList<?> noType = new ArrayList<String>();
 	ArrayList<? super Number> wild = new ArrayList<Object> ();
 	wild.add(1);
+
+	employee em = new employee();
+	employee em1 = new employee();
+	Object ob = new Object();
+	System.out.println(em == em1);
+	System.out.println(em == ob);
     }
 
     public static void arrayIsObj(Object o) {
@@ -112,9 +118,9 @@ class employee {
     /**
      *method in a class can call variables of any instance of this class, say, equals can call other.i and this.i
      */
-    public boolean equals(employee other){
+    public boolean equals(Object other){
 	System.out.println(this.i);
-	return this.i == other.i;
+	return true;//this.i == other.i;
     }
 
 }
@@ -128,3 +134,4 @@ class SelfContain {
 
     }
 }
+
