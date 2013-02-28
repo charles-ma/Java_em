@@ -34,6 +34,8 @@ public class JPractice {
 	b.equals(a);
 	System.out.println(twoD);
 	ArrayList<?> noType = new ArrayList<String>();
+	ArrayList<? super Number> wild = new ArrayList<Object> ();
+	wild.add(1);
     }
 
     public static void arrayIsObj(Object o) {
