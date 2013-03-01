@@ -13,7 +13,7 @@ public class Sort {
 	    a[i] = ran.nextInt(100);
 	}
 	System.out.println(Arrays.toString(a));
-	insertionSortWhile(a);
+	bubbleSort(a);
 	System.out.println(Arrays.toString(a));
     }
 
@@ -42,6 +42,19 @@ public class Sort {
 		j--;
 	    }
 	    a[j + 1] = key;
+	}
+    }
+
+    public static void bubbleSort(int[] a) {
+	if(a.length == 0 || a.length == 1) return; 
+	for(int i = a.length - 2; i >= 0; i--) {
+	    for(int j = 0; j <= i; j++) {
+		if(a[j] > a[j + 1]) {
+		    int tmp = a[j];
+		    a[j] = a[j + 1];
+		    a[j + 1] = tmp;
+		}
+	    }
 	}
     }
 }
