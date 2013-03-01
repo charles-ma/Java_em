@@ -1,0 +1,47 @@
+import java.util.Arrays;
+import java.util.Random;
+
+/**
+ *This is a bunch of sorting problems using different algo
+ */
+public class Sort {
+    public static void main(String[] args) {
+	Random ran = new Random();
+	int length = ran.nextInt(11);
+	int[] a = new int[length];
+	for(int i = 0; i < length; i++) {
+	    a[i] = ran.nextInt(100);
+	}
+	System.out.println(Arrays.toString(a));
+	insertionSortWhile(a);
+	System.out.println(Arrays.toString(a));
+    }
+
+    public static void insertionSort(int[] a) {
+	if(a.length == 0 || a.length == 1) return;
+	for(int i = 1; i < a.length; i++) {
+	    int key = a[i];
+	    for(int j = i - 1; j >= 0; j--) {
+		if(a[j] > key) a[j + 1] = a[j];
+		else {
+		    a[j + 1] = key;
+		    break;
+		}
+		if(j == 0) a[j] = key;
+	    }
+	}
+    }
+
+    public static void insertionSortWhile(int[] a) {
+	if(a.length == 0 || a.length == 1) return;
+	for(int i = 0; i < a.length; i++) {
+	    int key = a[i];
+	    int j = i - 1;
+	    while(j >= 0 && a[j] > key) {
+		a[j + 1] = a[j];
+		j--;
+	    }
+	    a[j + 1] = key;
+	}
+    }
+}
