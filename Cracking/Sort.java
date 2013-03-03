@@ -13,7 +13,7 @@ public class Sort {
 	    a[i] = ran.nextInt(100);
 	}
 	System.out.println(Arrays.toString(a));
-	insertionSortWhile(a);
+	bubbleSort(a);
 	System.out.println(Arrays.toString(a));
     }
 
