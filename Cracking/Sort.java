@@ -17,11 +17,12 @@ public class Sort {
 	System.out.println(Arrays.toString(a));
     }
 
+    
     public static void insertionSort(int[] a) {
 	for(int i = 1; i < a.length; i++) {
 	    int key = a[i];
 	    for(int j = i - 1; j >= 0; j--) {
-		if(a[j] > key) {
+		if(key < a[j]) {
 		    a[j + 1] = a[j];
 		    if(j == 0) a[j] = key;
 		} else {
@@ -30,6 +31,7 @@ public class Sort {
 		}
 	    }
 	}
+
     }
 
     public static void insertionSortWhile(int[] a) {
