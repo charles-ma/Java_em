@@ -17,7 +17,9 @@ public class Sort {
 	System.out.println(Arrays.toString(a));
     }
 
-    
+    /**
+     * insertion sort
+     */
     public static void insertionSort(int[] a) {
 	for(int i = 1; i < a.length; i++) {
 	    int key = a[i];
