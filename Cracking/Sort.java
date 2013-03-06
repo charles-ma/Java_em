@@ -36,6 +36,9 @@ public class Sort {
 
     }
 
+    /**
+     * insertion sort with a while loop
+     */
     public static void insertionSortWhile(int[] a) {
 	for(int i = 1; i < a.length; i++) {
 	    int key = a[i];
@@ -48,6 +51,9 @@ public class Sort {
 	}
     }
 
+    /**
+     * bubble sort
+     */
     public static void bubbleSort(int[] a) {
 	for(int i = a.length - 2; i >= 0; i--) {
 	    for(int j = 0; j <= i; j++) {
