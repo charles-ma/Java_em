@@ -2,9 +2,13 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- *This is a bunch of sorting problems using different algo
+ * This is a bunch of sorting problems using different algo
  */
 public class Sort {
+
+    /**
+     * Main method will generate random arrays and sort them with sorting algo to be tested
+     */
     public static void main(String[] args) {
 	Random ran = new Random();
 	int length = ran.nextInt(11);
@@ -18,7 +22,7 @@ public class Sort {
     }
 
     /**
-     * insertion sort
+     * Insertion sort
      */
     public static void insertionSort(int[] a) {
 	for(int i = 1; i < a.length; i++) {
@@ -37,7 +41,7 @@ public class Sort {
     }
 
     /**
-     * insertion sort with a while loop
+     * Insertion sort with a while loop
      */
     public static void insertionSortWhile(int[] a) {
 	for(int i = 1; i < a.length; i++) {
@@ -52,7 +56,7 @@ public class Sort {
     }
 
     /**
-     * bubble sort
+     * Bubble sort
      */
     public static void bubbleSort(int[] a) {
 	for(int i = a.length - 2; i >= 0; i--) {
