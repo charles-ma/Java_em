@@ -1,7 +1,9 @@
+import java.util.*;
+
 public class C3Q2 {
 
     public static void main(String[] args) {
-	Stack1 s = new Stack1();
+	Stack3 s = new Stack3();
 	s.push(1);
 	s.push(2);
 	s.push(-1);
@@ -15,7 +17,6 @@ public class C3Q2 {
 	s.pop();
 	System.out.println(s.min());
 	s.pop();
-	s.pop();
     }
 }
 
@@ -23,7 +24,7 @@ public class C3Q2 {
 /**
  * Stack implemented with linkedlist
  */
-class Stack {
+/*class Stack {
     
     private LNode top = null;
     private int min = Integer.MAX_VALUE;
@@ -51,12 +52,12 @@ class Stack {
 	if(top == null) throw new UnsupportedOperationException("The stack is empty!");
 	return top.value;
     }
-}
+    }*/
 
 /**
  * Nodes of linkedlist to implement the stack
  */
-class LNode {
+/*class LNode {
 
     public int value = 0;
     public int min = 0;
@@ -69,12 +70,12 @@ class LNode {
     }    
 
         
-} 
+    } */
 
 /**
  * Stack implemented with array
  */
-class Stack1 {
+/*class Stack1 {
     int[] baseArr = new int[100];
     int top = -1;
     int min = Integer.MAX_VALUE;
@@ -104,5 +105,55 @@ class Stack1 {
     public int min() {
 	if(top == -1) throw new UnsupportedOperationException("The stack is empty!");
 	return mins[index];
+    }
+    }*/
+
+/**
+ * Stack implemented using double integer node
+ */
+class Stack2 extends Stack<NodeWithMin> {
+
+    public void push(int v) {
+	int newMin = Math.min(min(), v);
+	super.push(new NodeWithMin(v, newMin));
+    }
+    
+    public int min() {
+	if(this.isEmpty()) return Integer.MAX_VALUE;
+	return this.peek().min;
+    }
+}
+
+
+class NodeWithMin {
+
+    public int value, min;
+
+    public NodeWithMin(int value, int min) {
+	this.value = value;
+	this.min = min;
+    }
+}
+
+class Stack3 extends Stack<Integer> {
+
+    private Stack<Integer> s = new Stack<Integer>();
+
+    public void push(int v) {
+	if(v <= min()) {
+	    s.push(v);
+	}
+	super.push(v);
+    }
+
+    public Integer pop() {
+	int p = super.pop();
+	if(p == s.peek()) s.pop();
+	return p;
+    }
+
+    public int min() {
+	if(isEmpty()) return Integer.MAX_VALUE;
+	return s.peek();
     }
 }
