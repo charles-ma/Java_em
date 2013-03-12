@@ -7,7 +7,8 @@ public class C3Q3 {
 	    ss.push(i);
 	}
 	System.out.println(ss.peek());
-	for(int i = 0; i < 3; i++) {
+	System.out.println(ss.pop(0));
+	for(int i = 0; i < 6; i++) {
 	    ss.pop();
 	}
 	System.out.println(ss.peek());
@@ -35,7 +36,7 @@ class SetOfStacks {
     
     public int pop() {
 	Stack<Integer> currS = stacks.get(currStackIndex);
-	if(currS.isEmpty()) {
+	while(currS.isEmpty()) {
 	    if(currStackIndex != 0) {
 		currStackIndex--;
 		currS = stacks.get(currStackIndex);
@@ -48,7 +49,7 @@ class SetOfStacks {
 
     public int peek() {
 	Stack<Integer> currS = stacks.get(currStackIndex);
-	if(currS.isEmpty()) {
+	while(currS.isEmpty()) {
 	    if(currStackIndex != 0) {
 		currStackIndex--;
 		currS = stacks.get(currStackIndex);
@@ -57,5 +58,10 @@ class SetOfStacks {
 	    }
 	}
 	return currS.peek();
+    }
+
+    public int pop(int index) {
+	Stack<Integer> s = stacks.get(index);
+	return s.pop();
     }
 }

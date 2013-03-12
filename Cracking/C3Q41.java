@@ -1,0 +1,63 @@
+import java.util.*;
+
+public class C3Q41 {
+    public static void main(String[] args) {
+	new Hanoi(4).solve();
+    }
+}
+
+class Hanoi {
+
+    int n;
+    Tower[] towers = new Tower[3];
+
+    public Hanoi(int n) {
+	this.n = n;
+	for(int i = 0; i < 3; i++) {
+	    towers[i] = new Tower();
+	}
+	for(int i = 0; i < n; i++) {
+	    towers[0].add(n - 1 - i);
+	}
+    }
+
+    public void solve() {
+	solveRec(0, 1, 2, n);
+	towers[2].print();
+    }
+
+    public void solveRec(int start, int mid, int end, int num) {
+	if(num == 1) {
+	    towers[end].add(towers[start].remove());
+	    System.out.println("Move one plate from " + start + " to " + end);
+	}
+	else {
+	    solveRec(start, end, mid, num - 1);
+	    towers[end].add(towers[start].remove());
+	    System.out.println("Move one plate from " + start + " to " + end);
+	    solveRec(mid, start, end, num - 1);
+	}
+    }
+}
+
+class Tower {
+
+    Stack<Integer> plates = new Stack<Integer>();
+    
+    public int remove() {
+	if(plates.isEmpty()) throw new RuntimeException("The tower is empty!");
+	return plates.pop();
+    }
+
+    public void add(int v) {
+	if(!plates.isEmpty() && plates.peek() <= v) throw new RuntimeException("Illegal move!");
+	plates.push(v);
+    }
+
+    public void print() {
+	Iterator it = plates.iterator();
+	while(it.hasNext()) {
+	    System.out.println(it.next());
+	}
+    }
+}
