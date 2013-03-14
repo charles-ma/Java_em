@@ -1,0 +1,14 @@
+class C5Q5 {
+    public static void main() {
+	getBitNum(31, 14);
+    }
+
+    public static getBitNum(int m, int n) {
+	int result = 0;
+	for(int i = 0; i <= 31; i++) {
+	    int mask = 1 << i;
+	    if(m & mask == n & mask) result++;
+	}
+	return 32 - result;
+    }
+}

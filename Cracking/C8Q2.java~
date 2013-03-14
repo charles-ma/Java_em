@@ -1,0 +1,11 @@
+import java.util.*;
+
+class C8Q2 {
+    public static void main(String[] args) {
+
+    }
+
+    public static void findPaths(int d) {
+	
+    }
+}
