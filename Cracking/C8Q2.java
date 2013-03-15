@@ -19,8 +19,7 @@ class C8Q2 {
 	    }
 	    System.out.println();
 	} else if(p.x < 0 || p.y < 0) {
-	    path.remove(path.size() - 1);
-	    return;
+	    
 	} else {
 	    findPaths(right, path);
 	    findPaths(down, path);
