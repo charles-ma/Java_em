@@ -5,10 +5,16 @@ class C8Q5 {
 	printParens(4);
     }
 
+    /**
+     * Facade method
+     */
     public static void printParens(int n) {
 	printParens(n - 1, n, new ArrayList<String>(), "(");
     }
     
+    /**
+     * Recursive method
+     */    
     public static void printParens(int l, int r, ArrayList<String> parens, String paren) {
 	parens.add(paren);
 	if(l < 0 || l > r) {
