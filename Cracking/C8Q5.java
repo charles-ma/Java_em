@@ -30,4 +30,19 @@ class C8Q5 {
 	}
 	parens.remove(parens.size() - 1);
     }
+
+    public void printParens1(int i, int j, String paren, ArrayList<String> parens) {
+	parens.add(paren);
+	if(i < 0 || j < 0 || i > j) {
+	    
+	} else if(i == 0 && j == 0) {
+	    for(int k = 0; k < parens.size(); k++) {
+		System.out.print(parens.get(k));
+	    }
+	} else {
+	    printParens(i - 1, j, "(", parens);
+	    printParens(i, j - 1, ")", parens);
+	}
+	parens.remove(parens.size() - 1);
+    }
 }

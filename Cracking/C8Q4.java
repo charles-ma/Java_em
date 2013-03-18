@@ -24,4 +24,21 @@ class C8Q4 {
 	}
 	return result;
     }
+
+    public static ArrayList<String> findPermu1(String s) {
+	ArrayList<String> result = new ArrayList<String>();
+	if(s.length == 1) {
+	    result.add(s);
+	    return result;
+	}
+	char c = s.charAt(0);
+	ArrayList<Strng> sub = findPermu1(s.substring(1));
+	for(int i = 0; i < sub.size(); i++) {
+	    String ss = sub.get(i);
+	    for(int j = 0; j <= ss.length(); j++) {
+		result.add(ss.substring(0, j) + c + ss.substring(j));
+	    }
+	}
+	return result;
+    }
 }
