@@ -28,13 +28,16 @@ class C9Q1 {
 	}
     }
 
+    /**
+     * Merge method using while loop
+     */
     public static void merge1(int[] a, int[] b) {
 	int k = a.length - 1;
 	int m = 4;
 	int n = b.length - 1;
 	while(m >= 0 && n >= 0) {
 	    if(a[m] > b[n]) {
-		a[k--] = a[m--];
+		a[k--] = a[m--]; 
 	    } else {
 		a[k--] = b[n--];
 	    }

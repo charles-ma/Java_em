@@ -72,36 +72,37 @@ class C8Q8 {
     */
 
     public void eightQueens() {
-	int[] col4row = new int[8];
-	placeQueen(0, col4row);
+	placeQueen(0, new int[8]);
     }
 
-    public boolean checkOk(int[] col4row, int r) {
-	for(int i = 0; i < r; i++) {
-	    if(col4row[i] == col4row[r] || Math.abs(col4row[i] - col4row[r]) == r - i) {
-		return false;
+    public void placeQueen(int n, int[] col4row) {
+	if(!checkOk(n - 1, col4row)) {
+	    
+	} else if(n == 8){
+	    printBoard(col4row);
+	} else {
+	    for(int i = 0; i < 8; i++) {
+		col4row[n] = i;
+		placeQueen(n + 1, col4row);
 	    }
+	}
+    } 
+
+    public boolean checkOk(int n, int[] col4row) {
+	for(int i = 0; i < n; i++) {
+	    if(col4row[i] == col4row[n] || Math.abs(col4row[i] - col4row[n]) == n - i) return false;
 	}
 	return true;
     }
 
-    public void placeQueen(int r, int[] col4row) {
-	if(!checkOk(col4row, r - 1)) {
-
-	} else if(r == 8) {
-	    for(int i = 0; i < 8; i++) {
-		for(int j = 0; j < 8; j++) {
-		    if(j == col4row[i]) System.out.print(String.format("%2d", 1));
-		    else System.out.print(String.format("%2d", 0));
-		}
-		System.out.println();
+    public void printBoard(int[] col4row) {
+	for(int i = 0; i < col4row.length; i++) {
+	    for(int j = 0; j < 8; j++) {
+		if(col4row[i] == j) System.out.print(String.format("%2d", 1));
+		else System.out.print(String.format("%2d", 0));
 	    }
 	    System.out.println();
-	} else {
-	    for(int i = 0; i < 8; i++) {
-		col4row[r] = i;
-		placeQueen(r + 1, col4row);
-	    }
 	}
+	System.out.println();
     }
 }
