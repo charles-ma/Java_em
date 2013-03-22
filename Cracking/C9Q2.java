@@ -14,12 +14,12 @@ class C9Q2 {
 
 class AnaComparator implements Comparator<String> {
     public int compare(String s1, String s2) {
-	return toSortedString(s1).compareTo(toSortedString(s2));
+	return sortString(s1).compareTo(sortString(s2));
     }
 
-    public String toSortedString(String s) {
-	char[] a = s.toCharArray();
-	Arrays.sort(a);
-	return new String(a);
+    public String sortString(String s) {
+	char[] chars = s.toCharArray();
+	Arrays.sort(chars);
+	return new String(chars);
     }
 }

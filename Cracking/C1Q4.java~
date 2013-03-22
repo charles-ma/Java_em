@@ -1,0 +1,8 @@
+class C1Q4 {
+    public static void main(String[] args) {
+	String s1 = "abdhg";
+	String s2 = "dhgba";
+	System.out.println(isAna(s1, s2));
+
+    }
+}
