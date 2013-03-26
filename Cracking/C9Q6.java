@@ -4,7 +4,6 @@ class C9Q6 {
 	find(a, 3);
     }
 
-
     /**
      * Finds a certian value in a 2d arrayx
      */
