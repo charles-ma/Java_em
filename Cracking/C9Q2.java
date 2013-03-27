@@ -12,6 +12,9 @@ class C9Q2 {
     }
 }
 
+/**
+ * Implements a comparator<String>
+ */
 class AnaComparator implements Comparator<String> {
     public int compare(String s1, String s2) {
 	return sortString(s1).compareTo(sortString(s2));
