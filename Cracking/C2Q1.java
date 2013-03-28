@@ -15,50 +15,39 @@ public class C2Q1 {
     /**
      *This method uses a hashmap
      */
-    public static Node<Character> removeDup(Node<Character> head) {
-	HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-	if(head == null) return null;
-	map.put(head.getData(), 1);
-	Node<Character> pre = head;
-	Node<Character> curr = head.getNext();
-	while(curr != null) {
-	    if(map.containsKey(curr.getData())) {
-		pre.setNext(curr.getNext());
-		curr = curr.getNext();
+    public static void removeDup(Node<Character> head) {
+	HashMap<Character, Integer> existing = new HashMap<Character, Integer>();
+	Node<Character> pre = null;
+	while(head != null) {
+	    if(existing.containsKey(head.getData())) {
+		pre.setNext(head.getNext());
 	    } else {
-		map.put(curr.getData(), 1);
-		pre = curr;
-		curr = curr.getNext();
+		existing.put(head.getData(), 1);
+		pre = head;
 	    }
+	    head = head.getNext();
 	}
-	return head;
     }
 
     /**
      *This method does not use any additional space such as a hashmap
      */
-    public static Node<Character> removeDup1(Node<Character> head) {
-	if(head == null) return null;
+    public static void removeDup1(Node<Character> head) {
+	Node<Character> runner1 = head;
+	Node<Character> runner2 = head.getNext();
 	Node<Character> pre = head;
-	Node<Character> curr = head.getNext();
-	Node<Character> runner = head;
-	while(curr != null) {
-	    while(runner != curr) {
-		if(runner.getData() == curr.getData()) {
-		    pre.setNext(curr.getNext());
+	while(runner2 != null) {
+	    runner1 = head;
+	    while(runner1 != runner2) {
+		if(runner1.getData() == runner2.getData()) {
+		    pre.setNext(runner2.getNext());
 		    break;
-		}
-		runner = runner.getNext();
+		} else {
+		    runner1 = runner1.getNext();
+		}		
 	    }
-	    if(runner == curr) {
-		pre = curr;
-		curr = curr.getNext();
-		runner = head;
-	    } else {
-		curr = curr.getNext();
-		runner = head;
-	    }
+	    if(runner1 == runner2) pre = runner2;
+	    runner2 = runner2.getNext();
 	}
-	return head;
     }
 }

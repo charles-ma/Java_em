@@ -29,21 +29,23 @@ class C9Q1 {
     }
 
     /**
-     * Merge method using while loop
+     * This method is simple, can be used in merge sort without using the sentinel card
      */
     public static void merge1(int[] a, int[] b) {
+	int i = 4;
+	int j = b.length - 1;
 	int k = a.length - 1;
-	int m = 4;
-	int n = b.length - 1;
-	while(m >= 0 && n >= 0) {
-	    if(a[m] > b[n]) {
-		a[k--] = a[m--]; 
+
+	while(i >= 0 && j >= 0) {
+	    if(a[i] > b[j]) {
+		a[k--] = a[i--];
 	    } else {
-		a[k--] = b[n--];
+		a[k--] = b[j--];
 	    }
 	}
-	while(n >= 0) {
-	    a[k--] = b[n--];
+
+	while(j >= 0) {
+	    a[k--] = b[j--];
 	}
     }
 }

@@ -4,7 +4,6 @@ public class C1Q8 {
     }
 
     public static boolean isRotation(String s1, String s2) {
-	s2 = s2 + s2;
-	return s2.contains(s1);
+	return (s2 + s2).contains(s1);
     }
 }
