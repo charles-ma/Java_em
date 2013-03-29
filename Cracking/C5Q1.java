@@ -9,6 +9,9 @@ class C5Q1 {
 	System.out.println(Integer.toBinaryString(n));
     }
 
+    /**
+     * Set a certain bit of an integer
+     */
     public static int setBit(int n, int m, int i, int j) {
 	int mask0 = 0;
 	int mask1 = 0;
