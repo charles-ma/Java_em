@@ -16,7 +16,7 @@ public class C2Q5 {
     }
 
     /**
-     *Find the start point of the circle in a circular linkedlist
+     * Find the start point of the circle in a circular linkedlist
      */
     public static Node<Integer> findCircleStart(Node<Integer> head) {
 	Node<Integer> runner1 = head;
