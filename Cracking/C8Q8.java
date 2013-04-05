@@ -71,7 +71,7 @@ class C8Q8 {
     }
     */
 
-    public void eightQueens() {
+    /*public void eightQueens() {
 	placeQueen(0, new int[8]);
     }
 
@@ -104,5 +104,48 @@ class C8Q8 {
 	    System.out.println();
 	}
 	System.out.println();
+	}*/
+
+    public static void eightQueens() {
+	int[][] board = new int[8][8];
+	for(int i = 0; i < 8; i++) {
+	    for(int j = 0; j < 8; j++) {
+		board[i][j] = 0;
+	    }
+	}
+	placeQueen(0, board);
+    }
+
+    public static boolean placeQueen(int row, int[][] board) {
+	if(row == 8) {
+	    for(int i = 0; i < 8; i++) {
+		for(int j = 0; j < 8; j++) {
+		    System.out.print(String.format("%2d", board[i][j]));
+		}
+		System.out.println();
+	    }
+	    return true;
+	}
+	for(int i = 0; i < 8; i++) {
+	    board[row][i] = 1;
+	    if(checkOk(board, row, i)) {
+		if(placeQueen(row + 1, board)) return true;
+	    }
+	    board[row][i] = 0;
+	}
+	return false;
+    }
+
+    public static boolean checkOk(int[][] board, int x, int y) {
+	
+	for(int i = 0; i < x; i++) {
+	    for(int j = 0; j < 8; j++) {
+		if(board[i][j] == 1) {
+		    if(j == y) return false;
+		    if(Math.abs(x - i) == Math.abs(y - j)) return false;
+		}
+	    }
+	}
+	return true;
     }
 }
