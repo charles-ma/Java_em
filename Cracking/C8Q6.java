@@ -14,38 +14,28 @@ class C8Q6 {
 	System.out.println();
 	printColor(grid);
     }
-
-    public static void printColor(int[][] a) {
-	for(int i = 0; i < a.length; i++) {
-	    for(int j = 0; j < a[i].length; j++) {
-		System.out.print(String.format("%2d",a[i][j]));
+    
+    public static void printColor(int[][] canvas) {
+	for(int i = 0; i < canvas.length; i++) {
+	    for(int j = 0; j < canvas[i].length; j++) {
+		System.out.print(String.format("%2d", canvas[i][j]));
 	    }
 	    System.out.println();
 	}
     }
 
-    /**
-     * Facade for the recursion method
-     */
-    public static void changeColor(int[][] a, int x, int y, int newColor) {
-	changeColor(a, x, y, newColor, a[x][y]);
+    public static void changeColor(int[][] canvas, int x, int y, int newColor) {
+	int oldColor = canvas[x][y];
+	changeColor(canvas, x, y, newColor, oldColor);
     }
-    
-    /**
-     * Recursion method
-     */
-    public static void changeColor(int[][] a, int x, int y, int newColor, int oldColor) {
-	if(x >= 0 && x < a.length && y >= 0 && y < a[0].length) {
-	    int color = a[x][y];
-	    if(color == oldColor) {
-		a[x][y] = newColor;
-		changeColor(a, x - 1, y, newColor, oldColor);
-		changeColor(a, x + 1, y, newColor, oldColor);
-		changeColor(a, x, y - 1, newColor, oldColor);
-		changeColor(a, x, y + 1, newColor, oldColor);
-	    }
-	} else {
-	    return;
-	}
+
+    public static void changeColor(int[][] canvas, int x, int y, int newColor, int oldColor) {
+	if(x >= canvas.length || x < 0 || y >= canvas[x].length || y < 0) return;
+	if(canvas[x][y] != oldColor) return;
+	canvas[x][y] = newColor;
+	changeColor(canvas, x + 1, y, newColor, oldColor);
+	changeColor(canvas, x - 1, y, newColor, oldColor);
+	changeColor(canvas, x, y + 1, newColor, oldColor);
+	changeColor(canvas, x, y - 1, newColor, oldColor);
     }
 }
