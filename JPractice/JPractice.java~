@@ -1,0 +1,38 @@
+import java.io.*;
+
+public class JPractice {
+
+    public static void main(String args[]){
+	JPractice practice = new JPractice();
+    }
+
+    public JPractice(){
+	try{
+	    throw new IOException();
+	}
+	catch(IOException e){
+	    e.printStackTrace();
+	}
+	employee a = new employee();
+	employee b = new employee();
+	System.out.println(a.equals(b));
+    }
+}
+
+class employee {
+    
+    private final int i;//final variable cannot be changed after initialization, i can only be initialized at declaration or in the constructor, i won't be set to default value if not explicitly initialized
+    private static int j;//j will be shared by all the instances of this class but j can be changed after initialization, a little confusing with the function of final, j will be set to default value if not explicitly initialized
+    private int k;//k will be initialized to its default value 0
+    public employee(){
+	i = 1;
+	System.out.println(k);
+	System.out.println(j);
+    }
+
+    public boolean equals(employee other){
+	System.out.println(this.i);
+	return this.i == other.i;
+    }
+
+}

@@ -1,0 +1,10 @@
+import java.util.*;
+
+class C1Q1 {
+    public static void main(String[] args) {
+	String uni = "abcsd";
+	String rep = "abcdc";
+    }
+
+}
+
