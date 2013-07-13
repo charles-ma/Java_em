@@ -69,7 +69,6 @@ public class Outer {
 	Inner inner = outer.new Inner();
 	System.out.println(outer.formString(inner.getValue(), outer.getValue()));
 	outer.addOne();
-	//System.out.println(outer.inValue());
 	System.out.println(outer.formString(inner.getValue(), outer.getValue()));
 	inner.addOne();
 	System.out.println(outer.formString(inner.getValue(), outer.getValue()));
