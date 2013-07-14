@@ -74,5 +74,4 @@ public class Outer {
 	System.out.println(outer.formString(inner.getValue(), outer.getValue()));
 	System.out.println(new StaInn().getValue());
     } 
-
 }
