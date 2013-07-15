@@ -25,9 +25,12 @@ class MyTask implements Runnable {
     public void run() {
 	while(true) {
 	    myLock.lock();
-	    i = j;
-	    System.out.println("j:" + j + " i:" + i);
-	    myLock.unlock();
+	    try {
+		i = j;
+		System.out.println("j:" + j + " i:" + i);
+	    } finally {
+		myLock.unlock();
+	    }
 	}
     }
 }
