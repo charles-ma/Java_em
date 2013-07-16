@@ -1,4 +1,4 @@
-public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
+public class BinarySearchTree<T extends Comparable<T>> extends Tree<T> {
 
     @SuppressWarnings("unchecked")
     public BinarySearchTree(T value, BinarySearchTree<T> left, BinarySearchTree<T> right) {
