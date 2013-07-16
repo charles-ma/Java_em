@@ -52,10 +52,4 @@ public class Tree<T> {
 	return "Tree, value: " + value + "; children number: " + children.size();
     }
 
-    @SuppressWarnings("unchecked")
-    public static void main(String[] args) {
-	Tree<String> tree = new Tree<String>("root", new Tree<String>("left"), new Tree<String>("right"));
-	System.out.println(tree);
-	for(Tree<String> child : tree.getChildren()) System.out.println(child);
-    }
 }
