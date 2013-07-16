@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Experiment class for inner class(ordinary inner class, static inner class and local inner class)
  */
