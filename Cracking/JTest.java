@@ -8,8 +8,10 @@ public class JTest {
 	//String[] b = (String[]) cs.toArray();
 	Thread myThread = new Thread(new MyTask(0));
 	Thread otherThread = new Thread(new MyTask(1));
-	myThread.start();
-	otherThread.start();
+	//myThread.start();
+	//otherThread.start();
+	int [] a = new int[3];
+	for(int i : a) {System.out.println(i);}
     }
 }
 
