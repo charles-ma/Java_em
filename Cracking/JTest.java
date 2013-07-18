@@ -12,6 +12,8 @@ public class JTest {
 	//otherThread.start();
 	int [] a = new int[3];
 	for(int i : a) {System.out.println(i);}
+	String[] b = new String[3];
+	Object[] c = (Object[]) b;
     }
 }
 
