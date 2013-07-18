@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.concurrent.locks.*;
 
-public class JTest {
+public class JTest extends SuTest {
     public static void main(String ... args) {
 	Collection<String> cs = new ArrayList<String>();
 	cs.add("abc");
@@ -14,6 +14,15 @@ public class JTest {
 	for(int i : a) {System.out.println(i);}
 	String[] b = new String[3];
 	Object[] c = (Object[]) b;
+	JTest test = new JTest();
+	System.out.println(test.getValue());
+    }
+}
+
+class SuTest {
+    int i = 1;
+    int getValue() {
+	return i;
     }
 }
 
