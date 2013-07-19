@@ -6,21 +6,41 @@ public class DynamicBindingTest {
 	new C().printName();
 	P a = new C();
 	a.printName();
+	C c = new C();
+	c.printD();
 	/*P b = new P();
 	C d = (C)b;
 	b.printName();*/
+	P[] arrayP = new C[1];
+	arrayP[0] = new C();
+	C[] arrayC = (C[]) arrayP;
+	System.out.println(arrayC instanceof P[]);
     } 
 }
 
 class P {
     public static int a = 0;
+    protected int pr = 5;
     public static void printName() {
 	System.out.println(a);
     }
+    public static void printName(String s) {
+
+    }
+}
+
+class D extends P {
+    
 }
 
 class C extends P {
     public static int b = 1;
+    private D d = new D();
+    
+    public void printD() {
+	System.out.println(d.pr);
+    }
+
     public static void printName() {
 	System.out.println(a - b);
     }
