@@ -8,9 +8,6 @@ public class DynamicBindingTest {
 	a.printName();
 	C c = new C();
 	c.printD();
-	/*P b = new P();
-	C d = (C)b;
-	b.printName();*/
 	P[] arrayP = new C[1];
 	arrayP[0] = new C();
 	C[] arrayC = (C[]) arrayP;
