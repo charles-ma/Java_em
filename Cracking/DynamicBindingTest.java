@@ -11,7 +11,7 @@ public class DynamicBindingTest {
 	P[] arrayP = new C[1];
 	arrayP[0] = new C();
 	C[] arrayC = (C[]) arrayP;
-	System.out.println(arrayC instanceof P[]);
+	//System.out.println(arrayC instanceof P[]);
 	Object[] o = new Object[2];
 	String[] s = (String[]) o;
     } 
