@@ -8,5 +8,10 @@ public class EqTest {
 	List<String> l = new ArrayList<String>();
 	Object obj = new Object();
 	System.out.println((a == obj) + " " + (l == obj) + " " + (a == b));
+
+	String[] s = new String[] {"abc", "dd", "eho"};
+	for(String w : s) {
+	    System.out.println(w);
+	}
     }
 }
