@@ -44,3 +44,4 @@ class C extends P {
 	System.out.println(a - b);
     }
 }
+
