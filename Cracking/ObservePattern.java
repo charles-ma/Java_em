@@ -2,6 +2,9 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
 
+/**
+ * using java built-in observer pattern
+ */
 class WeatherData extends Observable {
     private float temperature = 0;
 
