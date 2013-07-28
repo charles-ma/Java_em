@@ -13,7 +13,7 @@ public class DynamicBindingTest {
 	C[] arrayC = (C[]) arrayP;
 	System.out.println(arrayC instanceof P[]);
 	Object[] o = new Object[2];
-	String[] s = (String[]) o;
+	//String[] s = (String[]) o;
     } 
 }
 
