@@ -27,6 +27,9 @@ class WeatherData extends Observable {
     }
 }
 
+/**
+ * observers
+ */
 class Display implements Observer {
     @Override
     public void update(Observable o, Object arg) {
