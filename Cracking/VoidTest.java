@@ -6,5 +6,6 @@ public class VoidTest {
 	System.out.println(Void.TYPE instanceof java.lang.Class);
 	List<String> l = new ArrayList<String>();
 	System.out.println(l instanceof List);
+	System.out.println(l.getClass() instanceof java.lang.Class);
     }
 }
