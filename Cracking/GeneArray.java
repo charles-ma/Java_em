@@ -10,6 +10,8 @@ public class GeneArray {
 	new SubGeneArray().setName("a", "b");
 	new GeneArray().setName("c", "d");
 	new SubGeneArray().setName(new String[]{"a", "b", "c"});
+	SubGeneArray sb = new SubGeneArray();
+	sb.setName("a", "b");
 	//GeneArray as = new SubGeneArray();
 	//as.setName("a", "b");
     }
