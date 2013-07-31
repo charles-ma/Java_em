@@ -9,10 +9,13 @@ public class InnerInterface {
 
     private interface A {
 	int a = 0;
+	public void getA(String a);
     }
 
     public class B implements A {
-	
+	public void getA(String a) {
+
+	}
     }
 }
 
