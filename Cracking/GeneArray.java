@@ -7,9 +7,22 @@ public class GeneArray {
 	String b  = GeneArray.<String>getMid(a);
 	System.out.println(GeneArray.<Number>getMid(1, 2.0, 3));
 	System.out.println(getMid(a));
+	new SubGeneArray().setName("a", "b");
+	new GeneArray().setName("c", "d");
     }
     
     public static <T> T getMid(T... a) {
 	return a[a.length / 2];
+    }
+
+    public void setName(String... names) {
+	System.out.println("GeneArray!");
+    }
+}
+
+class SubGeneArray extends GeneArray {
+    @Override
+    public void setName(String[] names) {
+	System.out.println("SubGeneArray!");
     }
 }
