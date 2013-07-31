@@ -4,6 +4,7 @@ public class GeneArray {
     public static void main(String... args) {
 	//int[] a = {1, 2, 3};
 	String[] a = {"a", "b", "c"};
+	String b  = GeneArray.<String>getMid(a);
 	System.out.println(getMid(a));
     }
     
