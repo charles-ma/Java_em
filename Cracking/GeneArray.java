@@ -9,6 +9,9 @@ public class GeneArray {
 	System.out.println(getMid(a));
 	new SubGeneArray().setName("a", "b");
 	new GeneArray().setName("c", "d");
+	new SubGeneArray().setName(new String[]{"a", "b", "c"});
+	//GeneArray as = new SubGeneArray();
+	//as.setName("a", "b");
     }
     
     public static <T> T getMid(T... a) {
