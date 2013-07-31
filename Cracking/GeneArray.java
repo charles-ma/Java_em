@@ -5,10 +5,11 @@ public class GeneArray {
 	//int[] a = {1, 2, 3};
 	String[] a = {"a", "b", "c"};
 	String b  = GeneArray.<String>getMid(a);
+	System.out.println(GeneArray.<Number>getMid(1, 2.0, 3));
 	System.out.println(getMid(a));
     }
     
-    public static <T> T getMid(T[] a) {
+    public static <T> T getMid(T... a) {
 	return a[a.length / 2];
     }
 }
