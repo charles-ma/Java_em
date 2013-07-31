@@ -7,6 +7,7 @@ public class GeneMethodTest {
 	System.out.println(gt.echo("abc").getClass());
 	gt.<String>echoV();
 	gt.<String>echoV().getClass();
+	//String a = gt.<String>echoV();
 	//System.out.println(gt.<String>echoV().getClass());
     }
     
