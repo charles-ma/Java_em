@@ -4,7 +4,7 @@ public class VarargTest {
     }
 
     public static void main(String... args) {
-	new SubVararg().v(1, 2);
+	new SubVararg().v(1, 2, 3);
     }
 }
 
