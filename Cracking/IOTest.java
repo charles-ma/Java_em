@@ -14,7 +14,8 @@ public class IOTest {
 	try {
 	    try {
 		//decorator pattern
-		textInput = new BufferedReader(new FileReader(f));		
+		//textInput = new BufferedReader(new FileReader(f));		
+		textInput = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF-8"));
 		textOutput = new PrintWriter(new BufferedWriter(new FileWriter("output.txt")));
 		dataInput = new DataInputStream(new FileInputStream(f));
 		String line = null;
