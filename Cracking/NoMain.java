@@ -13,4 +13,7 @@ public class NoMain {
 	for(int k : list) System.out.println(k);
 	System.exit(0);
     }
+    {
+	System.out.println("good");
+    }
 }
