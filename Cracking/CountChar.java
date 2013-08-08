@@ -9,7 +9,7 @@ public class CountChar {
      */
     public static int getCount(String s, char a) {
 	if (s == null) return 0;
-	else return recurCount(s, a);
+	else return tailRecurCount(s, a, 0);
     }
 
     /**
@@ -24,7 +24,7 @@ public class CountChar {
     }
 
     /**
-     * count implemented by recursing
+     * count implemented by recursion
      */
     public static int recurCount(String s, char a) {
 	if (s.equals("")) return 0; 
@@ -32,4 +32,12 @@ public class CountChar {
 	return count + recurCount(s.substring(1), a);
     }
 
+    /**
+     * count implemented by tail recursion
+     */
+    public static int tailRecurCount(String s, char a, int count) {
+	if (s.equals("")) return count;
+	int c = s.charAt(0) == a ? 1 : 0;
+	return tailRecurCount(s.substring(1), a, count + c);
+    }
 }
