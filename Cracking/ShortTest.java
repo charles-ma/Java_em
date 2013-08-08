@@ -4,6 +4,7 @@ public class ShortTest {
 	short s = 1;
 	short t = 2;
 	s += 1;
+	s = (short) (s + 1);
     }
 
 }
