@@ -14,6 +14,9 @@ public class MergeTest {
 	System.out.println(Arrays.toString(a));
     }
 
+    /**
+     * not a very good solution because copying comes before sorting
+     */
     public static void mergeSort(int[] a) {
 	if (a == null || a.length <= 1) return;
 	int start = 0;
@@ -55,6 +58,9 @@ public class MergeTest {
 	return result;
     }
 
+    /**
+     * better solution which puts copying after sorting (do the copying when merging, when necessary)
+     */
     public static void mergeSort1(int[] a, int start, int end) {
 	if (start >= end) return;
 	int mid = (start + end) / 2;
