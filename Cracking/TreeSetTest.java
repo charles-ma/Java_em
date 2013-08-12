@@ -15,6 +15,9 @@ public class TreeSetTest {
 
 }
 
+/**
+ * this class has to implement Comparable
+ */
 class NotComparable implements Comparable{
     private int i = 1;
 
