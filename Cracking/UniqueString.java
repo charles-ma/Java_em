@@ -1,5 +1,8 @@
 import java.util.HashMap;
 
+/**
+ * Remove redundant letters
+ */
 class UniqueString {
     public static void main(String [] args) {
 	boolean result = isUnique("asdds");
