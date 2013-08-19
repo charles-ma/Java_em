@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * this is believed to be a compiler bug in Java 6, it was fixed in Java 7
  */
