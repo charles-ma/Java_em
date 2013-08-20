@@ -1,6 +1,9 @@
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Wild card tests
+ */
 public class WildCardTest {
     public static void main(String... args) {
 	WildCardTest test = new WildCardTest();
