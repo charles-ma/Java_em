@@ -1,3 +1,6 @@
+/**
+ * Print out the multiplication table with a single for loop
+ */
 public class SingleForLoop {
 
     public static void main(String... args) {
