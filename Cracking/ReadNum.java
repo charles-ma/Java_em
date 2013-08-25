@@ -1,5 +1,8 @@
 import java.io.*;
 
+/**
+ * A simple example of Java IO
+ */
 class ReadNum {
 
     public static void main(String[] args) {
