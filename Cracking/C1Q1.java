@@ -23,7 +23,7 @@ class UniqueString {
     public static boolean isUniqueInt(String s) {
 	int base = 0;
 	for (int i = 0; i < s.length(); i++) {
-	    int mark = 1 << (int)s.charAt(i);
+	    int mark = 1 << (s.charAt(i) - 96);
 	    if ((mark & base) != 0) return false;
 	    else base += mark;
 	}
