@@ -8,43 +8,42 @@ class C1Q3 {
     }
 
     public static String removeDup(String s) {
-	if(s.length() <= 1) return s;
+	if (s == null || s.length() <= 1) return s;
 	char[] chars = s.toCharArray();
-	int end = 0;
-	int head = 1;
-	for(int i = head; i < chars.length; i++) {
-	    int j = 0;
-	    for(j = 0; j <= end; j++) {
-		if(chars[i] == chars[j]) break;
+	int noDupIndex = 0;
+	int dup = 0;
+	for (int head = 1; head < chars.length; head++) {
+	    int k = 0;
+	    for (; k <= noDupIndex; k++) {
+		if (chars[head] == chars[k]) {
+		    dup++;
+		    break;
+		}
 	    }
-	    if(j > end) {
-		chars[j] = chars[i];
-		end++;
+	    if (k == noDupIndex + 1) {
+		noDupIndex++;
+		chars[noDupIndex] = chars[head];
 	    }
 	}
-	chars = Arrays.copyOfRange(chars, 0, ++end);
+	chars = Arrays.copyOfRange(chars, 0, chars.length - dup);
 	return new String(chars);
     }
 
     public static String removeDupHash(String s) {
-	if(s.length() <= 1) return s;
+	if (s == null || s.length() == 0) return s;
+	int hashInt = 0;
+	int head = 0;
+	int dup = 0;
 	char[] chars = s.toCharArray();
-	boolean[] hash = new boolean[26];
-	for(int i = 0; i < 26; i++) {
-	    hash[i] = false;
-	}
-	int end = 0;
-	for(int i = 0; i < chars.length; i++) {
-	    char c = chars[i];
-	    if(!hash[c - 'a']) {
-		hash[c - 'a'] = true;
-		chars[end] = c;
-		end++;
-	    } else {
-		
+	for (int i = 0; i < chars.length; i++) {
+	    int mask = 1 << (chars[i] - 96);
+	    if ((mask & hashInt) == 0) {
+		chars[head++] = chars[i];
+		hashInt += mask;
 	    }
+	    else dup++;
 	}
-	chars = Arrays.copyOfRange(chars, 0, end);
+	chars = Arrays.copyOfRange(chars, 0, chars.length - dup);
 	return new String(chars);
     }
 }
