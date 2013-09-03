@@ -2,7 +2,7 @@ import java.util.*;
 
 class C1Q3 {
     public static void main(String[] args) {
-	String s = "abcbad";
+	String s = "adfqoefoeqft";
 	System.out.println(removeDup(s));
 	System.out.println(removeDupHash(s));
     }
