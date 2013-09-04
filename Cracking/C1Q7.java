@@ -3,7 +3,8 @@ import java.util.Arrays;
 
 public class C1Q7 {
     public static void main(String[] args) {
-	int [][] a = {{1, 2, 3}, {0, 3, 5}, {0, 1, 9}};
+	int[][] a = {{1, 2, 3}, {0, 3, 5}, {0, 1, 9}};
+	System.out.println(Arrays.deepToString(a));
 	setZeros(a);
 	System.out.println(Arrays.deepToString(a));
     }
@@ -13,24 +14,24 @@ public class C1Q7 {
      * This method uses three loops
      */
     public static void setZeros(int[][] a) {
-	ArrayList<Integer> cols = new ArrayList<Integer>();
-	ArrayList<Integer> rows = new ArrayList<Integer>();
-	for(int i = 0; i < a.length; i++) {
-	    for(int j = 0; j < a[i].length; j++) {
-		if(a[i][j] == 0) {
-		    rows.add(i);
-		    cols.add(j);
+	ArrayList<Integer> lineNum = new ArrayList<Integer>();
+	ArrayList<Integer> colNum = new ArrayList<Integer>();
+	for (int i = 0; i < a.length; i++) {
+	    for (int j = 0; j < a[i].length; j++) {
+		if (a[i][j] == 0) {
+		    lineNum.add(i);
+		    colNum.add(j);
 		}
 	    }
 	}
-	for(int i = 0; i < rows.size(); i++) {
-	    for(int j = 0; j < a[rows.get(i)].length; j++) {
-		a[rows.get(i)][j] = 0;
+	for (int i : lineNum) {
+	    for (int j = 0; j < a[i].length; j++) {
+		a[i][j] = 0;
 	    }
 	}
-	for(int i = 0; i < cols.size(); i++) {
-	    for(int j = 0; j < a.length; j++) {
-		a[j][cols.get(i)] = 0;
+	for (int j : colNum) {
+	    for (int i = 0; i < a.length; i++) {
+		a[i][j] = 0;
 	    }
 	}
     }
