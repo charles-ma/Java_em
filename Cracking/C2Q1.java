@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class C2Q1 {
     public static void main(String[] args) {
@@ -10,6 +11,10 @@ public class C2Q1 {
 	head1.print();
 	removeDup1(head1);
 	head1.print();
+	Node<Character> head2 = LinkedListGenerator.createCharLinkedList(10);
+	head2.print();
+	removeDup2(head2);
+	head2.print();
     }
 
     /**
@@ -48,6 +53,16 @@ public class C2Q1 {
 	    }
 	    if(runner1 == runner2) pre = runner2;
 	    runner2 = runner2.getNext();
+	}
+    }
+
+    public static void removeDup2(Node<Character> head) {
+	HashSet<Character> noDupCharSet = new HashSet<Character>();
+	if (head == null) return;
+	noDupCharSet.add(head.getData());
+	while (head != null && head.getNext() != null) {
+	    if (!noDupCharSet.add(head.getNext().getData())) head.setNext(head.getNext().getNext());
+	    else head = head.getNext();
 	}
     }
 }
