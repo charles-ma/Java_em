@@ -13,6 +13,8 @@ public class LinkedListGenerator {
 	    System.out.println(head1.getData());
 	    head1 = head1.getNext();
 	}
+	Node<Double> head2 = LinkedListGenerator.<Double>createLinkedList(new Double[] {new Double(1.0), new Double(2.3), new Double(3.1)});
+	head2.print();
     }
 
     public static Node<Character> createCharLinkedList(int len) {
@@ -39,6 +41,21 @@ public class LinkedListGenerator {
 	    head = node;
 	}
 
+	return head;
+    }
+
+    public static <T> Node<T> createLinkedList(T[] values) {
+	Node<T> head = null;
+	Node<T> runner = null;
+	for (T value : values) {
+	    if (runner == null) {
+		head = new Node<T>(value, null);
+		runner = head;
+	    } else {
+		runner.setNext(new Node<T>(value, null));
+		runner = runner.getNext();
+	    }
+	}
 	return head;
     }
 }
