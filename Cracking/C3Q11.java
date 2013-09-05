@@ -71,7 +71,7 @@ class Stackey {
     }
 
     public boolean push(int value) {
-	if (availableIndex.size() == 0) return false;
+	if (availableIndex.peek() == null) return false;
 	int index = availableIndex.pop();
 	Nody newNode = new Nody(value, index, top.getIndex());
 	top = newNode;
