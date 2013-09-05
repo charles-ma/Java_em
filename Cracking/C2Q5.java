@@ -36,9 +36,11 @@ public class C2Q5 {
     }
 
     public static Node<Integer> findCircleStart1(Node<Integer> head) {
+	if (head == null || head.getNext() == null || head.getNext().getNext() == null) return null;
 	Node<Integer> runner1 = head.getNext();
 	Node<Integer> runner2 = head.getNext().getNext();
 	while (runner1 != runner2) {
+	    if (runner1.getNext() == null || runner2.getNext() == null || runner2.getNext().getNext() == null) return null;
 	    runner1 = runner1.getNext();
 	    runner2 = runner2.getNext().getNext();
 	}
