@@ -16,8 +16,7 @@ public class C2Q4 {
 	int a = head1 != null ? head1.getData() : 0;
 	int b = head2 != null ? head2.getData() : 0;
 	Node<Integer> newHead = new Node<Integer>((a + b + carrier) % 10, null);
-	carrier = (a + b + carrier) / 10;
-	newHead.setNext(addTwoLinkedLists1(head1 != null ? head1.getNext() : null, head2 != null ? head2.getNext() : null, carrier));
+	newHead.setNext(addTwoLinkedLists1(head1 != null ? head1.getNext() : null, head2 != null ? head2.getNext() : null, (a + b + carrier) / 10));
 	return newHead;
     }
 }
