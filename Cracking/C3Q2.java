@@ -157,3 +157,4 @@ class Stack3 extends Stack<Integer> {
 	return s.peek();
     }
 }
+
