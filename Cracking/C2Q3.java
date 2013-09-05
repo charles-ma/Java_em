@@ -12,6 +12,7 @@ public class C2Q3 {
     }
 
     public static void deleteNode(Node<Character> node) {
+	if (node == null || node.getNext() == null) return;
 	Node<Character> nextNode = node.getNext();
 	node.setData(nextNode.getData());
 	node.setNext(nextNode.getNext());
