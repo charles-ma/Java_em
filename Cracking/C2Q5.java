@@ -13,6 +13,7 @@ public class C2Q5 {
 	}
 	end.setNext(start);
 	System.out.println(findCircleStart(head).getData());
+	System.out.println(findCircleStart1(head).getData());
     }
 
     /**
@@ -32,5 +33,19 @@ public class C2Q5 {
 	    runner2 = runner2.getNext();
 	} while(runner1 != runner2);
 	return runner1;
+    }
+
+    public static Node<Integer> findCircleStart1(Node<Integer> head) {
+	Node<Integer> runner1 = head.getNext();
+	Node<Integer> runner2 = head.getNext().getNext();
+	while (runner1 != runner2) {
+	    runner1 = runner1.getNext();
+	    runner2 = runner2.getNext().getNext();
+	}
+	while (head != runner1) {
+	    head = head.getNext();
+	    runner1 = runner1.getNext();
+	}
+	return head;
     }
 }
