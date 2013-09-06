@@ -62,7 +62,7 @@ public class BTree {
 
     public void print() {
 	for (int i = 1; i <= getDepth(this); i++) {
-	    printl(this, i, (int) Math.pow(2, getDepth(this) - 1) * 3 / 2);
+	    printl(this, i, (int) (Math.pow(2, getDepth(this) - 1) * 5 / (Math.pow(2, i - 1) + 1)));
 	    System.out.println();
 	}
     }
@@ -70,13 +70,10 @@ public class BTree {
     public void printl(BTree root, int level, int width) {
 	if (level == 1) {
 	    for (int i = 0; i < width; i++) System.out.print(" ");
-	    System.out.printf("%3d", root == null ? 0 : root.getValue());
+	    System.out.print(root == null ? " " : root.getValue());
 	} else {
-	    printl(root == null ? null : root.getLeft(), level - 1, 2 * width / 3);
-	    for (int i = 0; i < width; i++) {
-		System.out.print(" ");
-	    }
-	    printl(root == null ? null : root.getRight(), level - 1, 2 * width / 3);
+	    printl(root == null ? null : root.getLeft(), level - 1, width);
+	    printl(root == null ? null : root.getRight(), level - 1, width);
 	}
     }
 }
