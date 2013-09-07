@@ -1,9 +1,12 @@
+import java.util.regex.*;
+
 class C1Q5 {
     public static void main(String[] args) {
 	String s = "ab c  de";
 	System.out.println(replace(s));
 	System.out.println(replaceInSb(s));
 	System.out.println(replaceArray(s));
+	System.out.println(replaceReg(s));
     }
 
     public static String replace(String s) {
@@ -42,5 +45,11 @@ class C1Q5 {
 	}
 	return new String(result);
     } 
+
+    public static String replaceReg(String s) {
+	Pattern p = Pattern.compile(" ");
+	Matcher m = p.matcher(s);
+	return m.replaceAll("%20");
+    }
     
 }
