@@ -33,9 +33,10 @@ public class BTree {
 	return value;
     }
 
-    public static BTree createInstance(int size) {
+    public static BTree createInstance(int size, boolean balance) {
 	BTree root = new BTree(0);
-	createInstance(root, size - 1);
+	if (balance) createInstance(root, size - 1);
+	else createInstanceInB(root, size - 1);
 	return root;
     }
     
@@ -51,6 +52,17 @@ public class BTree {
 	}
     }
 
+    public static void createInstanceInB(BTree root, int size) {
+	if (size <= 0) return;
+	if (root.getLeft() == null) {
+	    root.setLeft(new BTree(size));
+	    createInstanceInB(root, size - 1);
+	} else if (root.getRight() == null) {
+	    root.setRight(new BTree(size));
+	    createInstanceInB(root.getLeft(), size - 1);
+	}
+    }
+
     public static int getDepth(BTree root) {
 	if (root == null) return 0;
 	return Math.max(getDepth(root.getLeft()), getDepth(root.getRight())) + 1;
@@ -62,18 +74,17 @@ public class BTree {
 
     public void print() {
 	for (int i = 1; i <= getDepth(this); i++) {
-	    printl(this, i, (int) (Math.pow(2, getDepth(this) - 1) * 5 / (Math.pow(2, i - 1) + 1)));
+	    printl(this, i);
 	    System.out.println();
 	}
     }
 
-    public void printl(BTree root, int level, int width) {
+    public void printl(BTree root, int level) {
 	if (level == 1) {
-	    for (int i = 0; i < width; i++) System.out.print(" ");
 	    System.out.print(root == null ? " " : root.getValue());
 	} else {
-	    printl(root == null ? null : root.getLeft(), level - 1, width);
-	    printl(root == null ? null : root.getRight(), level - 1, width);
+	    printl(root == null ? null : root.getLeft(), level - 1);
+	    printl(root == null ? null : root.getRight(), level - 1);
 	}
     }
 }
