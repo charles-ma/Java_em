@@ -17,6 +17,10 @@ public class GraphSample {
 	nodes.get(2).addNexts(nodes.get(4));
     }
     
+    public List<GraphNode> getNodes() {
+	return nodes;
+    }
+
     public void printNodes() {
 	for (GraphNode node : nodes) node.printNode();
     }
@@ -33,6 +37,10 @@ class GraphNode {
     
     public void addNexts(GraphNode... nodes) {
 	for (GraphNode node : nodes) nexts.add(node);
+    }
+
+    public List<GraphNode> getNexts() {
+	return nexts;
     }
 
     public int getId() {
