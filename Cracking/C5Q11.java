@@ -2,8 +2,8 @@ public class C5Q11 {
     public static void main(String... args) {
 	int m = 0x0400;
 	int n = 0x0054;
-	System.out.println(n);
-	System.out.println(setBitValues(m, n, 2, 6));
+	System.out.println(Integer.toBinaryString(n));
+	System.out.println(Integer.toBinaryString(setBitValues(m, n, 2, 6)));
     }
 
     public static int setBitValue(int index, int value, boolean bitV) {
