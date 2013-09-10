@@ -11,6 +11,8 @@ public class ArrayTest {
 	ArrayList al = new ArrayList();
 	al.add(2);
 	al.add("string");
+	Object[] b = a;
+	b[0] = 3;
     }
 
     public static void mocFun(String[] strings) {
