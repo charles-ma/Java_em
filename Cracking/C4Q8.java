@@ -9,7 +9,7 @@ public class C4Q8 {
 
     public static void printAllPath(BTree root, int sum) {
 	LinkedList<Integer> result = new LinkedList<Integer>();
-	LinkedList<BTree> queue = new LinkedList<BTree>();
+	/*LinkedList<BTree> queue = new LinkedList<BTree>();
 	queue.add(root);
 	while (!queue.isEmpty()) {
 	    BTree node = queue.remove();
@@ -17,7 +17,10 @@ public class C4Q8 {
 	    result.clear();
 	    if (node.getLeft() != null) queue.add(node.getLeft());
 	    if (node.getRight() != null) queue.add(node.getRight());
-	}
+	    }*/
+	printPath(root, sum, result);
+	if (root.getLeft() != null) printAllPath(root.getLeft(), sum);
+	if (root.getRight() != null) printAllPath(root.getRight(), sum);
     }
 
     public static void printPath(BTree root, int sum, LinkedList<Integer> values) {
