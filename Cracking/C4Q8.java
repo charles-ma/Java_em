@@ -7,6 +7,9 @@ public class C4Q8 {
 	printAllPath(root, 7);
     }
 
+    /**
+     * The time complexity of this algo is O(nlgn)
+     */
     public static void printAllPath(BTree root, int sum) {
 	LinkedList<Integer> result = new LinkedList<Integer>();
 	/*LinkedList<BTree> queue = new LinkedList<BTree>();
