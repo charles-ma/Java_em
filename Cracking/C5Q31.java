@@ -4,6 +4,10 @@ public class C5Q31 {
 	System.out.printf("%32s\n", Integer.toBinaryString(value));
 	System.out.printf("%32s\n", Integer.toBinaryString(nextSmaller(value)));
 	System.out.printf("%32s\n", Integer.toBinaryString(nextLarger(value)));
+	System.out.printf("%32s\n", Integer.toBinaryString(preLargest(nextSmaller(value))));
+	int value1 = 10;
+	System.out.printf("%32s\n", Integer.toBinaryString(value1));
+	System.out.printf("%32s\n", Integer.toBinaryString(preLargest(value1)));
     }
 
     public static int setBit(int value, int pos, boolean bValue) {
@@ -47,6 +51,34 @@ public class C5Q31 {
 	}
 	for (int i = 0; i < count; i++) {
 	    value = setBit(value, 30 - i, true);
+	}
+	return value;
+    }
+
+    public static int preLargest(int value) {
+	if (getBit(value, 0) == 0) {
+	    int index = 0;
+	    while (getBit(value, index) == 0) {
+		index++;
+	    }
+	    value = setBit(value, index - 1, true);
+	    value = setBit(value, index, false);
+	} else {
+	    int index = 0;
+	    int count = 0;
+	    while (getBit(value, index) == 1) {
+		value = setBit(value, index, false);
+		count++;
+		index++;
+	    }
+	    while (getBit(value, index) == 0) {
+		index++;
+	    }
+	    value = setBit(value, index, false);
+	    value = setBit(value, index - 1, true);
+	    for (int i = 0; i < count; i++) {
+		value = setBit(value, index - 2 - i, true);
+	    }
 	}
 	return value;
     }
