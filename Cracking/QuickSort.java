@@ -13,7 +13,7 @@ public class QuickSort {
     }
 
     public static void sort(int[] a, int start, int end) {
-	if (start >= end) return;
+	if (start >= end || end == start + 1) return;
 	int p = getPivot(a, start, end);
 	sort(a, start, p);
 	sort(a, p + 1, end);
