@@ -2,7 +2,7 @@ import java.util.*;
 
 public class C9Q51 {
     public static void main(String... args) {
-	String[] a = {"abc", "", "dge", "ert", "", "", "hyioet", "ko"};
+	String[] a = {"abc", "", "dge", "ert", "", "", "hyioet", "ko", "", ""};
 	System.out.println(Arrays.toString(a));
 	System.out.println(findElement(a, "hyioet"));
     }
@@ -17,7 +17,7 @@ public class C9Q51 {
 	int mid = (start + end) / 2;
 	if (s.equals(a[mid])) return mid;
 	while (mid < end && a[mid].equals("")) mid++;
-	if (mid == end || a[mid].compareTo(s) > 0) return findElement(a, s, start, mid);
+	if (mid == end || a[mid].compareTo(s) > 0) return findElement(a, s, start, (start + end) / 2);
 	return findElement(a, s, mid, end);
     }
 }
