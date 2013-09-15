@@ -10,6 +10,11 @@ public class ClassTest {
 	System.out.println(Integer.class == int.class);
 	System.out.println(int.class == int.class);
 	System.out.println(int.class instanceof Class);
+	try {
+	    Integer.class.newInstance();
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
     }
 
     public void a() {
