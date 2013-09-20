@@ -6,6 +6,7 @@ public class DynamicBindingTest {
 	new C().printName();
 	P a = new C();
 	a.printName();
+	a.dynaPrint();
 	C c = new C();
 	c.printD();
 	P[] arrayP = new C[1];
@@ -26,6 +27,10 @@ class P {
     public static void printName(String s) {
 
     }
+    public void dynaPrint() {
+	printName();
+    }
+
 }
 
 class D extends P {
@@ -42,6 +47,11 @@ class C extends P {
 
     public static void printName() {
 	System.out.println(a - b);
+    }
+
+    public void dynaPrint() {
+	printName();
+	System.out.println("dynamic binding");
     }
 }
 
