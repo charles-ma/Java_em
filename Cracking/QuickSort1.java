@@ -24,24 +24,20 @@ public class QuickSort1 {
     }
 
     public static int getPivot(int[] a, int start, int end) {
-	int p = start;
-	while (true) {
-	    int i = start;
-	    int j = end - 1;
+	int p = a[start];
+	int i = start;
+	int j = end - 1;
+	while (i < j) {
 	    while (i < end && a[i] <= a[start]) i++;
 	    while (j >= start && a[j] > a[start]) j--;
 	    if (i < j) {
 		int tmp = a[i];
 		a[i] = a[j];
 		a[j] = tmp;
-	    } else {
-		int tmp = a[start];
-		a[start] = a[j];
-		a[j] = tmp;
-		p = j;
-		break;
 	    }
 	}
-	return p;
+	a[start] = a[j];
+	a[j] = p;
+	return j;
     }
 }
