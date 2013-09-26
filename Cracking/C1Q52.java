@@ -1,6 +1,6 @@
 public class C1Q52 {
     public static void main(String... args) {
-	String s = "adf fe   fewef  d";
+	String s = " q fewhor  wehorhi";
 	System.out.println(s);
 	System.out.println(encrypt(s));
 	System.out.println(encryptArray(s));
