@@ -13,5 +13,9 @@ public class WildCardTest {
     public void wildFunc(List<? extends Comparable> param) {
 	System.out.println("This is the wild card test!");
     }
+
+    public <T extends Object> void yetAno(T a) {
+	
+    }
 }
 
