@@ -2,6 +2,8 @@ import java.util.*;
 
 public class ArrayTest {
     public static void main(String... args) {
+	//String[] ss = (String[]) new Object[5];
+
 	String[] strings = new String[] {"1"};
 	mocFun(new String[]{"123"});
 	//mocFun({"123"});
