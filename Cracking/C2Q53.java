@@ -17,11 +17,9 @@ public class C2Q53 {
     }
 
     public static void printStart(Node<Character> head) {
-	Node<Character> runner1 = null;
-	Node<Character> runner2 = null;
-	while (runner1 == null || runner1 != runner2) {
-	    if (runner1 == null) runner1 = head;
-	    if (runner2 == null) runner2 = head;
+	Node<Character> runner1 = head.getNext();
+	Node<Character> runner2 = runner1.getNext();
+	while (runner1 != runner2) {
 	    runner1 = runner1.getNext();
 	    runner2 = runner2.getNext().getNext();
 	}
