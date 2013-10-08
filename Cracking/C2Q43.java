@@ -39,6 +39,6 @@ public class C2Q43 {
 	    head1 = head1 == null ? null : head1.getNext();
 	    head2 = head2 == null ? null : head2.getNext();
 	}
-	return head.getNext();
+	return head = head.getNext();
     }
 }
