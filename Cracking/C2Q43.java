@@ -25,6 +25,9 @@ public class C2Q43 {
 	return new Node<Integer>(sum % 10, add(head1 == null ? null : head1.getNext(), head2 == null ? head2 : head2.getNext(), sum / 10));
     }
 
+    /**
+     * Iteration solution will be more space-efficient 
+     */
     public static Node<Integer> add1(Node<Integer> head1, Node<Integer> head2) {
 	int c = 0;
 	Node<Integer> head = new Node<Integer>(Integer.MIN_VALUE, null);
@@ -39,6 +42,7 @@ public class C2Q43 {
 	    head1 = head1 == null ? null : head1.getNext();
 	    head2 = head2 == null ? null : head2.getNext();
 	}
+	// Make the first node ready to be gced
 	return head = head.getNext();
     }
 }
