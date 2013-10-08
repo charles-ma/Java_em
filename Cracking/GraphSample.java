@@ -9,11 +9,11 @@ public class GraphSample {
     }
 
     public GraphSample() {
-	nodes = new ArrayList<GraphNode>(5);
-	for (int i = 0; i < 5; i++) nodes.add(new GraphNode(i));
+	nodes = new ArrayList<GraphNode>(6);
+	for (int i = 0; i < 6; i++) nodes.add(new GraphNode(i));
 	nodes.get(0).addNexts(nodes.get(1), nodes.get(2), nodes.get(4));
 	nodes.get(1).addNexts(nodes.get(3));
-	nodes.get(3).addNexts(nodes.get(2));
+	nodes.get(3).addNexts(nodes.get(2), nodes.get(0));
 	nodes.get(2).addNexts(nodes.get(4));
     }
     
