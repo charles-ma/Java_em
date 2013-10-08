@@ -2,6 +2,17 @@ import java.util.*;
 
 public class C4Q33 {
     public static void main(String... args) {
+	/*Random r = new Random();
+	int size = r.nextInt(15);
+	int[] a = new int[size];
+	for (int i = 0; i < size; i++) a[i] = r.nextInt(100);
+	Arrays.sort(a);
+	System.out.println(Arrays.toString(a));*/
+	BTree root = createRanTree();
+	if (root != null) root.print();
+    }
+
+    public static BTree createRanTree() {
 	Random r = new Random();
 	int size = r.nextInt(15);
 	int[] a = new int[size];
@@ -9,7 +20,7 @@ public class C4Q33 {
 	Arrays.sort(a);
 	System.out.println(Arrays.toString(a));
 	BTree root = consTree(a);
-	if (root != null) root.print();
+	return root;
     }
     
     public static BTree consTree(int[] a) {
