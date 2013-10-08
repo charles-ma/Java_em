@@ -4,9 +4,19 @@ public class BTree {
     private int value = 0;
     private BTree right = null;
     private BTree left = null;
+    private BTree parent = null;
 
     public BTree(int value) {
 	this.value = value;
+    }
+
+    public BTree(int value, BTree parent) {
+	this.value = value;
+	this.parent = parent;
+    }
+
+    public BTree getParent() {
+	return parent;
     }
 
     public void setRight(BTree right) {
@@ -43,10 +53,10 @@ public class BTree {
     public static void createInstance(BTree root, int size) {
 	if (size <= 0) return;
 	if (root.getLeft() == null) {
-	    root.setLeft(new BTree(size));
+	    root.setLeft(new BTree(size, root));
 	    createInstance(root, size - 1);
 	} else if (root.getRight() == null) {
-	    root.setRight(new BTree(size));
+	    root.setRight(new BTree(size, root));
 	    createInstance(root.getLeft(), (size - 1) / 2);
 	    createInstance(root.getRight(), size - 1 - (size - 1) / 2);
 	}
@@ -55,10 +65,10 @@ public class BTree {
     public static void createInstanceInB(BTree root, int size) {
 	if (size <= 0) return;
 	if (root.getLeft() == null) {
-	    root.setLeft(new BTree(size));
+	    root.setLeft(new BTree(size, root));
 	    createInstanceInB(root, size - 1);
 	} else if (root.getRight() == null) {
-	    root.setRight(new BTree(size));
+	    root.setRight(new BTree(size, root));
 	    createInstanceInB(root.getLeft(), size - 1);
 	}
     }
