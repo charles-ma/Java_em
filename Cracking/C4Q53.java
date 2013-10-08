@@ -18,6 +18,12 @@ public class C4Q53 {
 	    System.out.println(runner.getValue());
 	    runner = getNextPre(runner);
 	}
+	System.out.println("Post-order:");
+	runner = getNextIn(root);
+	while (runner != null) {
+	    System.out.println(runner.getValue());
+	    runner = getNextPost(runner);
+	}
     }
 
     public static BTree getNextIn(BTree n) {
@@ -46,5 +52,28 @@ public class C4Q53 {
 	    p = p.getParent();
 	}
 	return p;
+    }
+
+    public static BTree getNextPost(BTree n) {
+	if (n.getParent() == null) return null;
+	BTree p = n.getParent();
+	if (p.getLeft() == n) {
+	    if (p.getRight() != null) {
+		BTree r = p.getRight();
+		while (true) {
+		    if (r.getLeft() != null) {
+			r = r.getLeft();
+		    } else if (r.getRight() != null) {
+			r = r.getRight();
+		    } else {
+			return r;
+		    }
+		}
+	    } else {
+		return p;
+	    }
+	} else {
+	    return p;
+	}
     }
 }
