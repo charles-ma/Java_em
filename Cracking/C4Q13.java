@@ -71,11 +71,11 @@ public class C4Q13 {
 }
 
 class TreeWrapper {
-	public BTree tree;
-	public int depth = 0;
-	
-	public TreeWrapper(BTree tree, int depth) {
-	    this.tree = tree;
-	    this.depth = depth;
-	}
+    public BTree tree;
+    public int depth = 0;
+    
+    public TreeWrapper(BTree tree, int depth) {
+	this.tree = tree;
+	this.depth = depth;
+    }
 }
