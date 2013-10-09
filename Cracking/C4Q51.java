@@ -65,7 +65,10 @@ public class C4Q51 {
 	if (p.getRight() == n) return p;
 	if (p.getRight() == null) return p;
 	BTree r = p.getRight();
-	while (r.getLeft() != null) r = r.getLeft();
-	return r;
+	while (true) {
+	    if (r.getLeft() != null) r = r.getLeft();
+	    else if (r.getRight() != null) r = r.getRight();
+	    else return r;
+	}
     }
 }
