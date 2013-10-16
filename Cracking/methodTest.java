@@ -4,6 +4,8 @@ public class methodTest {
 	m.b();
 	subClass s = new subClass();
 	s.b();
+	methodTest a = new subClass();
+	a.b();
     }
 
     private void a() {
