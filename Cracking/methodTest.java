@@ -1,10 +1,12 @@
 public class methodTest {
     public static void main(String... args) {
-	new methodTest().b();
-	new subClass().b();
+	methodTest m = new methodTest();
+	m.b();
+	subClass s = new subClass();
+	s.b();
     }
 
-    protected void a() {
+    private void a() {
 	System.out.println("a method");
     }
 
@@ -14,8 +16,13 @@ public class methodTest {
 }
 
 class subClass extends methodTest {
-    @Override
-    protected void a() {
+    private void a() {
 	System.out.println("override a method");
     }
+
+    @Override
+    public void b() {
+	this.a();
+    }
+    
 }
